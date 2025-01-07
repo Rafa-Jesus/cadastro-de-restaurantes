@@ -4,6 +4,9 @@ restaurantes = [{'nome':'SushiMan', 'categoria': 'Japonesa', 'ativo':True},
                 {'nome':'Familia Gasperin', 'categoria': 'Pizza', 'ativo':False}]
 
 def exibir_nome_do_programa():
+
+    '''Exibe o nome da aplicação'''
+
     print("""
     ░██████╗░█████╗░██████╗░░█████╗░██████╗░  ███████╗██╗░░██╗██████╗░██████╗░███████╗░██████╗░██████╗
     ██╔════╝██╔══██╗██╔══██╗██╔══██╗██╔══██╗  ██╔════╝╚██╗██╔╝██╔══██╗██╔══██╗██╔════╝██╔════╝██╔════╝
@@ -18,23 +21,49 @@ def voltar_ao_menu_principal():
     main()
 
 def exibir_subtitulo(texto):
+
+    '''Exibe o subtítulo na tela
+    
+    Inputs: texto a ser exibido na tela
+    
+    Output: faz o print do texto'''
+
     print(texto)
 
 def finalizar_app():
+
+    '''Limpa o console e finaliza a aplicação.'''
+
     os.system('cls')
     exibir_subtitulo('Saindo da aplicação.\n')
 
 def exibir_opcoes():
+
+    '''Exibe quais opções o usuário pode escolher'''
+
     print('1. Cadastrar Restaurante')
     print('2. Listar Restaurante')
     print('3. Ativar Restaurante')
     print('4. Sair\n')
 
 def opcao_invalida():
+
+    '''Exibe no console a mensagem informando que a opção escolhida é inválida'''
+
     print('Opção inválida.')
     voltar_ao_menu_principal()
 
 def cadastrar_restaurante():
+
+    '''Cadastra um restaurante e o adiciona na lista de restaurantes
+    
+    Inputs: 
+    - Nome do restaurante
+    - Categoria do restaurante
+    
+    Outputs:
+    - Mensagem de confirmação'''
+
     os.system('cls')
     exibir_nome_do_programa()
     exibir_subtitulo('CADASTRO DE NOVOS RESTAURANTES\n')
@@ -46,6 +75,9 @@ def cadastrar_restaurante():
     voltar_ao_menu_principal()
 
 def listar_restaurantes():
+
+    '''Lista os restaurantes que ja foram cadastrados'''
+
     os.system('cls')
     exibir_nome_do_programa()
     exibir_subtitulo('LISTANDO RESTAURANTES\n')
@@ -59,6 +91,15 @@ def listar_restaurantes():
     voltar_ao_menu_principal()
 
 def alternar_status():
+
+    '''Ativa ou desativa o status do restaurante
+    
+    Inputs:
+    - Nome do restaurante
+    
+    Outputs:
+    -Mensagem de confirmação ou negação'''
+
     os.system('cls')
     exibir_nome_do_programa()
     exibir_subtitulo('ALTERNANDO STATUS DO RESTAURANTE\n')
@@ -79,6 +120,14 @@ def alternar_status():
 
 def escolher_opcao():
 
+    '''Pergunta ao usuário qual a ação desejada e executa a função correspondente
+    
+    Inputs:
+    - Escolha da opção por dígitos de 1 a 4
+    
+    Outputs:
+    - Executa as funções correspondentes para cada opção'''
+
     try:
         opcao_escolhida = int(input('Escolha uma opção: '))
         print(f'Você escolheu a opção {opcao_escolhida}.\n')
@@ -98,8 +147,10 @@ def escolher_opcao():
     except:
         opcao_invalida()
 
-
 def main():
+
+    '''Exibe o menu principal do programa'''
+
     os.system('cls')
     exibir_nome_do_programa()
     exibir_opcoes()
