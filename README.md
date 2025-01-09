@@ -15,3 +15,4 @@ O projeto foi desenvolvido com o auxílio de instrutores da **Alura**, como part
 
 - **Linguagem**: Python
 - **Bibliotecas Nativas**: `os`
+- **Git**
