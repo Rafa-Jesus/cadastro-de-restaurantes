@@ -1,4 +1,5 @@
 import os
+import platform
 
 restaurantes = [{'nome':'SushiMan', 'categoria': 'Japonesa', 'ativo':True},
                 {'nome':'Familia Gasperin', 'categoria': 'Pizza', 'ativo':False}]
@@ -34,7 +35,7 @@ def finalizar_app():
 
     '''Limpa o console e finaliza a aplicação.'''
 
-    os.system('cls')
+    limpar_console()
     exibir_subtitulo('Saindo da aplicação.\n')
 
 def exibir_opcoes():
@@ -64,7 +65,7 @@ def cadastrar_restaurante():
     Outputs:
     - Mensagem de confirmação'''
 
-    os.system('cls')
+    limpar_console()
     exibir_nome_do_programa()
     exibir_subtitulo('CADASTRO DE NOVOS RESTAURANTES\n')
     nome_do_restaurante = input('Digite o nome do restaurante que deseja cadastrar: ')
@@ -78,7 +79,7 @@ def listar_restaurantes():
 
     '''Lista os restaurantes que ja foram cadastrados'''
 
-    os.system('cls')
+    limpar_console()
     exibir_nome_do_programa()
     exibir_subtitulo('LISTANDO RESTAURANTES\n')
 
@@ -100,7 +101,7 @@ def alternar_status():
     Outputs:
     -Mensagem de confirmação ou negação'''
 
-    os.system('cls')
+    limpar_console()
     exibir_nome_do_programa()
     exibir_subtitulo('ALTERNANDO STATUS DO RESTAURANTE\n')
     nome_restaurante = input('Digite o nome do restaurante que deseja alternar o satus: ')
@@ -139,7 +140,7 @@ def escolher_opcao():
         elif opcao_escolhida == 3:
             alternar_status()
         elif opcao_escolhida == 4:
-            os.system('cls')
+            limpar_console()
             exibir_nome_do_programa()
             print('Saindo da aplicação.')
         else:
@@ -147,11 +148,16 @@ def escolher_opcao():
     except:
         opcao_invalida()
 
+def limpar_console():
+    sistema = platform.system()
+    if sistema == 'Windows':
+        os.system('cls')
+    else:
+        os.system('clear')
+
 def main():
-
     '''Exibe o menu principal do programa'''
-
-    os.system('cls')
+    limpar_console()
     exibir_nome_do_programa()
     exibir_opcoes()
     escolher_opcao()
