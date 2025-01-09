@@ -14,5 +14,5 @@ O projeto foi desenvolvido com o auxílio de instrutores da **Alura**, como part
 ## Tecnologias Utilizadas
 
 - **Linguagem**: Python
-- **Bibliotecas Nativas**: `os`
+- **Bibliotecas Nativas**: `os` `platform`
 - **Git**
